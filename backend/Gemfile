@@ -1,0 +1,39 @@
+source "https://rubygems.org"
+
+ruby "~> 3.3.0"
+
+gem "rails", "~> 7.2.0"
+gem "pg", ">= 1.1"           # PostgreSQL adapter
+gem "puma", ">= 5.0"
+gem "rack-cors"               # CORS for Next.js frontend
+
+# Auth
+gem "devise"
+gem "devise-jwt"
+
+# Authorization
+gem "pundit"
+
+# Payments
+gem "stripe"
+
+# Background jobs
+gem "sidekiq"
+gem "redis", ">= 4.0"
+
+# Serialization
+gem "jsonapi-serializer"
+
+# pgvector for AI embedding support
+gem "pgvector"
+
+group :development, :test do
+  gem "debug", platforms: %i[mri windows]
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "faker"
+end
+
+group :development do
+  gem "rubocop-rails-omakase", require: false
+end
